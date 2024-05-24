@@ -7,7 +7,7 @@ import pickle
 df = pickle.load(open('clean_data.pkl','rb'))
 model = pickle.load(open('model.pkl','rb'))
 
-#Title of the site
+
 st.title('Boat Price Prediction')
 
 
