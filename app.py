@@ -32,10 +32,10 @@ for col, values in unique_values_dict.items():
          come_num_values = st.text_input(col)
          join_data.append(come_num_values) 
 
- if st.button('predict'):
-     reshaped_data = np.asarray(join_data).reshape(1,-1)
-     prediction = model.predict(reshaped_data)
-     st.success(prediction[0])
+if st.button('predict'):
+    reshaped_data = np.asarray(join_data).reshape(1,-1)
+    prediction = model.predict(reshaped_data)
+    st.success(prediction[0])
 
 
 # try:
