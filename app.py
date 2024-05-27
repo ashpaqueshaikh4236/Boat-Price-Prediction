@@ -36,6 +36,6 @@ try:
     if st.button('predict'):
         reshaped_data = np.asarray(join_data).reshape(1,-1)
         prediction = model.predict(reshaped_data)
-        st.success(prediction[0])
+        st.success('Boat Price is ' + str(prediction[0]))
 except:
     st.warning('Please Fill all values')
