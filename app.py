@@ -35,7 +35,7 @@ for col, values in unique_values_dict.items():
 if st.button('predict'):
         reshaped_data = np.asarray(join_data).reshape(1,-1)
         prediction = model.predict(reshaped_data)
-        st.success('Boat price is ' + prediction[0])
+        st.success(prediction[0])
 # try:
 #     if st.button('predict'):
 #         reshaped_data = np.asarray(join_data).reshape(1,-1)
