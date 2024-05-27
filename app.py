@@ -1,6 +1,5 @@
 import streamlit as st
 import numpy as np
-import pandas as pd
 import pickle
 
 
@@ -33,24 +32,10 @@ for col, values in unique_values_dict.items():
          come_num_values = st.text_input(col)
          join_data.append(come_num_values) 
 
-if st.button('predict'):
-    reshaped_data = np.asarray(join_data).reshape(1, -1)
-    reshaped_df = pd.DataFrame(reshaped_data, columns=df.columns)
-    prediction = model.predict(reshaped_df)
-    st.success(prediction[0])
-
-
-# if st.button('predict'):
-#     reshaped_data = np.asarray(join_data).reshape(1,-1)
-#     st.write(reshaped_data)
-#     prediction = model.predict(reshaped_data)
-#     st.success(prediction[0])
-
-
-# try:
-#     if st.button('predict'):
-#         reshaped_data = np.asarray(join_data).reshape(1,-1)
-#         prediction = model.predict(reshaped_data)
-#         st.success(prediction[0])
-# except:
-#     st.warning('Please Fill all values')
+try:
+    if st.button('predict'):
+        reshaped_data = np.asarray(join_data).reshape(1,-1)
+        prediction = model.predict(reshaped_data)
+        st.success(prediction[0])
+except:
+    st.warning('Please Fill all values')
