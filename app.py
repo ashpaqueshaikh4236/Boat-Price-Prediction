@@ -35,7 +35,11 @@ for col, values in unique_values_dict.items():
 try:
     if st.button('predict'):
         reshaped_data = np.asarray(join_data).reshape(1,-1)
-        prediction = model.predict(reshaped_data)
-        st.success('Boat Price is ' + str(prediction[0]))
+        if 'select' in reshaped_data or '' in reshaped_data:
+            st.warning('Please fill all values')
+        else:
+            prediction = model.predict(reshaped_data)
+            st.success('Boat Price is ' + str(prediction[0]))
 except:
-    st.warning('Please Fill all values')
+    except Exception as e:
+    st.warning(f'An error occurred: {e}')
