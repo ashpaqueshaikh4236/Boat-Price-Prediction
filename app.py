@@ -40,6 +40,6 @@ try:
         else:
             prediction = model.predict(reshaped_data)
             st.success('Boat Price is ' + str(prediction[0]))
-except:
-    except Exception as e:
+
+except Exception as e:
     st.warning(f'An error occurred: {e}')
